@@ -36,13 +36,50 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 /* write all the steps invloved */
 
+1.Write the Verilog module exp6 implementing the synchronous SR latch using clocked logic.
+
+2.Initialize outputs Q = 0 and Qbar = 1 using initial blocks.
+
+3.Use an always @(posedge c1k) block to update Q and Qbar based on the logic equations.
+
+4.Create a testbench to apply various S and R input combinations with clock pulses.
+
+5.Simulate and verify output behavior (Q, Qbar) for all input cases using a waveform or monitor display.
+
+
+
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+Developed by: SANGEETHA S 
+RegisterNumber:212224040287
+```
+module exp6(S,R,c1k,Q,Qbar);
+input S,R,c1k;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge c1k)
+begin
+Q=S|((~R)&Q);
+Qbar=R|((~S)&(Qbar));
+end
+endmodule
+```
+
+
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![Screenshot 2025-05-25 150354](https://github.com/user-attachments/assets/1d6f5ceb-af5e-41df-b407-40724a389975)
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![Screenshot 2025-05-25 151647](https://github.com/user-attachments/assets/e9efa09c-b50c-45cf-8248-1d23564c3f3d)
+
+
 **RESULTS**
+Thus the program is verified and executed successfully
